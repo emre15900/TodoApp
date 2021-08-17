@@ -30,10 +30,19 @@ export default class TodoApp extends Component {
         }
   }
 
+  removeTodo = (name) => {
+        const filtered = this.state.tasks.filter(task=>task.name!==name)
+        this.setState({
+            tasks: filtered
+        })
+    }
+
   render() {
     return <div>
         <Todo addTodo={this.addTodo} />
-        <TodoList tasks={this.state.tasks} />
+        <TodoList 
+        removeTodo={this.removeTodo} 
+        tasks={this.state.tasks} />
     </div>;
   }
 }

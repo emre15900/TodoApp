@@ -9,7 +9,7 @@ export default class TodoList extends Component {
                         return(
                             <div key={tasks.id} >
                                 <li>{tasks.name}</li>
-                                <button>Delete</button>
+                                <button onClick={()=> this.props.removeTodo(tasks.name)} >Delete</button>
                             </div>
                         )
                     })
