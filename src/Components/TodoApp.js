@@ -37,10 +37,23 @@ export default class TodoApp extends Component {
         })
     }
 
+   drawTodo = (name) => {
+       const newDraw = this.state.tasks.map(task=>{
+           if(task.name === name){
+               task.done =! task.done
+           }
+           return task
+       })
+       this.setState({
+           tasks: newDraw,
+       })
+   }
+
   render() {
     return <div>
         <Todo addTodo={this.addTodo} />
         <TodoList 
+        drawTodo={this.drawTodo}
         removeTodo={this.removeTodo} 
         tasks={this.state.tasks} />
     </div>;

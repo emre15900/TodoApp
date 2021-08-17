@@ -37,3 +37,8 @@ ul li{
   border-bottom: 2px solid lime;
   text-align: left;
 }
+
+.done{
+  text-decoration-line: line-through;
+  text-decoration-color: red;
+}
