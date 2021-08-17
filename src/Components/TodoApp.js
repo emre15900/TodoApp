@@ -16,7 +16,7 @@ export default class TodoApp extends Component {
             alert("No Task!")
         }
         else if(this.state.tasks.find(tasks=>tasks.name === newInput)){
-            alert("You have to this Task!")
+            alert("You have this Task!")
         }
         else{
             const newTask = {
