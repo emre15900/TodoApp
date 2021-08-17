@@ -4,29 +4,20 @@ export default class Todo extends Component {
   state = {
     input: "",
   };
-
-  changeHandler = (e) => {
-    this.setState({
-      input: e.target.value,
-    });
-  };
-  submitHandler = (e) => {
-    this.props.addTodo(this.state.input);
-    this.setState({
-      input: "",
-    });
-    e.preventDefault();
-  };
-
+  changeHandler=(e)=>{
+      this.setState({
+          input: e.target.value
+      })
+  }
   render() {
     return (
-      <form onSubmit={this.submitHandler}>
+      <form>
         <input
-          type="text"
-          value={this.state.input}
           onChange={this.changeHandler}
+          value={this.state.value}
+          type="text"
         />
-        <button type="submit">Add</button>
+        <button>Add</button>
       </form>
     );
   }
