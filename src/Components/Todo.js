@@ -10,6 +10,7 @@ export default class Todo extends Component {
       input: e.target.value,
     });
   };
+  
   submitHandler = (e) => {
     this.props.addTodo(this.state.input);
     this.setState({
